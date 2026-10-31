@@ -1,0 +1,26 @@
+{
+  "name": "异常检测研究图谱",
+  "short_name": "异常检测图谱",
+  "description": "异常检测主题地图、文献时间线、卡片库与研究空白。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f0e2",
+  "theme_color": "#4c2b18",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

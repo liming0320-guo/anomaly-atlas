@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="异常检测研究图谱：主题地图、文献时间线、可维护文献卡片库与研究空白。">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#4c2b18">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="异常检测图谱">
+  <meta name="format-detection" content="telephone=no">
+  <title>异常检测研究图谱</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#overview" aria-label="返回异常检测研究图谱首页">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="brand-copy">
+          <strong>异常检测</strong>
+          <small>RESEARCH ATLAS</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="页面导航">
+        <a href="#map">主题地图</a>
+        <a href="#timeline">时间线</a>
+        <a href="#library">文献库</a>
+        <a href="#gaps">研究空白</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-button" id="theme-toggle" type="button" aria-label="切换深色模式" aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true">◐</span>
+          <span class="theme-label">主题</span>
+        </button>
+        <button class="button button-primary header-add" type="button" data-action="add-paper">
+          <span aria-hidden="true">＋</span> 添加文献
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="overview" aria-labelledby="hero-title">
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> LIVING REVIEW · <span id="last-updated">2026.10</span></p>
+          <h1 id="hero-title">从<em>异常</em>出发，<br>看见研究的时间与结构。</h1>
+          <p class="hero-lead">
+            一张面向异常检测研究者的活文献地图。沿着方法谱系、时间跃迁与真实评测争议，
+            找到下一项值得做的研究。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-light" href="#map">探索主题地图 <span aria-hidden="true">↘</span></a>
+            <button class="button button-outline-light" type="button" data-action="add-paper">加入新文献</button>
+          </div>
+          <p class="hero-note">资料库可直接在浏览器中增补、批注与导出；内置论文均附 DOI 或公开论文链接。</p>
+        </div>
+
+        <div class="hero-visual" aria-label="异常检测研究版图概览">
+          <div class="visual-frame">
+            <div class="visual-head">
+              <span>ATLAS / 001</span>
+              <span>ANOMALY SIGNAL</span>
+            </div>
+            <svg viewBox="0 0 520 410" role="img" aria-labelledby="hero-svg-title hero-svg-desc">
+              <title id="hero-svg-title">异常检测研究领域概念图</title>
+              <desc id="hero-svg-desc">从时间、关系、视觉与评测四个方向汇聚到正常性建模这一核心问题。</desc>
+              <defs>
+                <radialGradient id="hero-core-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="var(--hero-accent)" stop-opacity=".48"/>
+                  <stop offset="100%" stop-color="var(--hero-accent)" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <circle cx="260" cy="205" r="128" class="hero-ring hero-ring-a"/>
+              <circle cx="260" cy="205" r="85" class="hero-ring hero-ring-b"/>
+              <circle cx="260" cy="205" r="42" fill="url(#hero-core-glow)"/>
+              <path d="M260 205 L105 115 M260 205 L416 104 M260 205 L407 320 M260 205 L121 330" class="hero-link"/>
+              <circle cx="105" cy="115" r="8" class="hero-node node-a"/>
+              <circle cx="416" cy="104" r="5" class="hero-node node-b"/>
+              <circle cx="407" cy="320" r="7" class="hero-node node-c"/>
+              <circle cx="121" cy="330" r="4" class="hero-node node-d"/>
+              <circle cx="260" cy="205" r="13" class="hero-core"/>
+              <circle cx="260" cy="205" r="26" class="hero-pulse"/>
+              <text x="260" y="209" text-anchor="middle" class="hero-core-label">NORMAL</text>
+              <text x="98" y="92" class="hero-node-label">TIME</text>
+              <text x="398" y="84" class="hero-node-label">VISION</text>
+              <text x="392" y="350" class="hero-node-label">GRAPH</text>
+              <text x="92" y="359" class="hero-node-label">EVAL</text>
+              <path d="M62 250 C94 230 98 280 135 260 S181 220 213 252" class="hero-signal"/>
+              <circle cx="135" cy="260" r="3" class="hero-signal-point"/>
+              <circle cx="213" cy="252" r="3" class="hero-signal-point"/>
+            </svg>
+            <div class="visual-foot">
+              <span>正常性边界</span>
+              <span>稀缺标签 × 分布漂移</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stats" aria-label="资料库统计">
+        <div class="hero-stat">
+          <strong id="stat-papers">0</strong>
+          <span>核心文献</span>
+        </div>
+        <div class="hero-stat">
+          <strong id="stat-years">0</strong>
+          <span>覆盖年跨度</span>
+        </div>
+        <div class="hero-stat">
+          <strong>06</strong>
+          <span>研究主题</span>
+        </div>
+        <div class="hero-stat">
+          <strong id="stat-recent">0</strong>
+          <span>2023 年后</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="section-tabs" aria-label="章节快捷导航">
+      <div class="section-tabs-inner">
+        <a href="#map" class="active"><span>01</span> 主题地图</a>
+        <a href="#timeline"><span>02</span> 时间线</a>
+        <a href="#library"><span>03</span> 卡片库</a>
+        <a href="#gaps"><span>04</span> 研究空白</a>
+      </div>
+    </nav>
+
+    <section class="section atlas-section" id="map" aria-labelledby="map-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">01 / TOPIC MAP</p>
+          <h2 id="map-title">异常检测不是一个问题，<br>而是六条相互穿透的路径。</h2>
+        </div>
+        <p class="section-intro">
+          点击主题或论文节点，快速查看它的知识位置。主题之间并非互斥：
+          时序方法可以借助图结构，视觉系统也必须回答“如何评测”。
+        </p>
+      </div>
+
+      <div class="atlas-layout">
+        <div class="atlas-panel">
+          <div class="panel-caption">
+            <span>交互式主题星图</span>
+            <span id="map-count-label">全部文献</span>
+          </div>
+          <div class="topic-map-wrap" id="topic-map-wrap">
+            <svg id="topic-map" viewBox="0 0 820 560" role="img" aria-labelledby="map-svg-title map-svg-desc"></svg>
+            <div class="map-tooltip" id="map-tooltip" role="status" aria-live="polite"></div>
+          </div>
+          <div class="map-legend" aria-label="地图图例">
+            <span><i class="legend-dot core"></i>研究问题</span>
+            <span><i class="legend-dot topic"></i>主题分支</span>
+            <span><i class="legend-dot paper"></i>论文节点</span>
+            <span class="map-hint">滚轮缩放在浏览器中不使用；点击节点进入阅读</span>
+          </div>
+        </div>
+
+        <aside class="atlas-sidebar" aria-live="polite">
+          <div class="sidebar-topline">
+            <span>SELECTED PATH</span>
+            <button class="text-button" id="clear-topic" type="button" hidden>清除选择</button>
+          </div>
+          <div id="topic-inspector"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section timeline-section" id="timeline" aria-labelledby="timeline-title">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="section-index">02 / TIMELINE</p>
+          <h2 id="timeline-title">方法沿时间展开，<br>争议也在同步累积。</h2>
+        </div>
+        <div class="timeline-controls" aria-label="时间线筛选">
+          <button class="chip active" type="button" data-timeline-topic="all">全部路径</button>
+          <button class="chip" type="button" data-timeline-topic="temporal">时序</button>
+          <button class="chip" type="button" data-timeline-topic="vision">视觉</button>
+          <button class="chip" type="button" data-timeline-topic="trust">评测</button>
+        </div>
+      </div>
+
+      <div class="timeline-shell">
+        <div class="timeline-head">
+          <div>
+            <span>研究跃迁</span>
+            <strong id="timeline-summary"></strong>
+          </div>
+          <p>每个圆点是一篇论文；点击圆点查看详情，点击年份查看当年文献。</p>
+        </div>
+        <div class="timeline-scroller">
+          <svg id="timeline-svg" viewBox="0 0 1200 390" role="img" aria-labelledby="timeline-svg-title timeline-svg-desc"></svg>
+        </div>
+        <div class="timeline-tooltip" id="timeline-tooltip" role="status" aria-live="polite"></div>
+        <div class="era-strip" id="era-strip"></div>
+      </div>
+    </section>
+
+    <section class="section library-section" id="library" aria-labelledby="library-title">
+      <div class="section-heading compact-heading">
+        <div>
+          <p class="section-index">03 / PAPER LIBRARY</p>
+          <h2 id="library-title">可检索、可批注、<br>可不断生长的文献库。</h2>
+        </div>
+        <div class="library-actions">
+          <button class="button button-secondary" type="button" data-action="import">导入 JSON</button>
+          <button class="button button-secondary" type="button" data-action="export">导出备份</button>
+          <button class="button button-primary" type="button" data-action="add-paper"><span aria-hidden="true">＋</span> 新增论文</button>
+          <input id="import-input" type="file" accept=".json,application/json" hidden>
+        </div>
+      </div>
+
+      <div class="library-toolbar">
+        <label class="search-box" for="library-search">
+          <span aria-hidden="true">⌕</span>
+          <input id="library-search" type="search" placeholder="搜索题名、作者、方法或批注…" autocomplete="off">
+          <kbd> / </kbd>
+        </label>
+
+        <div class="filter-row">
+          <label class="select-field">
+            <span>年代</span>
+            <select id="era-filter">
+              <option value="all">全部年代</option>
+              <option value="classic">2015 及以前</option>
+              <option value="growth">2016—2020</option>
+              <option value="transformer">2021—2023</option>
+              <option value="frontier">2024—2026</option>
+            </select>
+          </label>
+          <label class="select-field">
+            <span>类型</span>
+            <select id="type-filter">
+              <option value="all">全部类型</option>
+              <option value="方法">方法</option>
+              <option value="综述">综述</option>
+              <option value="基准">基准</option>
+              <option value="数据集">数据集</option>
+            </select>
+          </label>
+          <label class="select-field">
+            <span>排序</span>
+            <select id="sort-filter">
+              <option value="curated">策展排序</option>
+              <option value="newest">年份：新到旧</option>
+              <option value="oldest">年份：旧到新</option>
+              <option value="title">题名 A–Z</option>
+            </select>
+          </label>
+          <label class="toggle-field">
+            <input id="starred-filter" type="checkbox">
+            <span>只看收藏</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="topic-filter-row" id="topic-filter-row" aria-label="主题筛选"></div>
+
+      <div class="library-status">
+        <p id="library-count" aria-live="polite">正在载入文献…</p>
+        <div class="status-actions">
+          <span id="active-filter-note"></span>
+          <button class="text-button" type="button" id="reset-filters">清除筛选</button>
+        </div>
+      </div>
+
+      <div class="paper-grid" id="paper-grid"></div>
+      <div class="load-more-wrap">
+        <button class="button button-secondary load-more" type="button" id="load-more" hidden>继续加载</button>
+      </div>
+    </section>
+
+    <section class="section gaps-section" id="gaps" aria-labelledby="gaps-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-index">04 / OPEN PROBLEMS</p>
+          <h2 id="gaps-title">真正的机会，藏在<br>“还不成立”的结论之间。</h2>
+        </div>
+        <p class="section-intro">
+          这些研究空白不是模型清单，而是可检验的缺口。每张卡片给出证据起点、
+          可验证假设与第一个可执行实验。
+        </p>
+      </div>
+
+      <div class="gap-filter-row">
+        <button class="chip active" type="button" data-gap-horizon="all">所有周期</button>
+        <button class="chip" type="button" data-gap-horizon="near">近期可做</button>
+        <button class="chip" type="button" data-gap-horizon="mid">中期突破</button>
+        <button class="chip" type="button" data-gap-horizon="long">长期方向</button>
+      </div>
+      <div class="gap-grid" id="gap-grid"></div>
+
+      <div class="method-note">
+        <span class="method-note-index">NOTE</span>
+        <div>
+          <strong>研究空白页的计算逻辑</strong>
+          <p>空白主题来自策展判断；证据数、代表论文与时间覆盖会随你在文献库中新增的条目实时变化。新增论文不会自动生成结论，但会进入对应主题的证据池。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section" aria-label="资料库维护">
+      <div>
+        <p class="section-index">KEEP THE ATLAS ALIVE</p>
+        <h2>下一次更新，<br>由你的阅读与研究推动。</h2>
+      </div>
+      <div class="closing-actions">
+        <button class="button button-light" type="button" data-action="add-paper">添加一篇新论文</button>
+        <button class="button button-outline-light" type="button" data-action="export">导出当前资料库</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <div>
+        <strong>异常检测研究图谱</strong>
+        <p>An open, evolving map of anomaly detection research.</p>
+      </div>
+    </div>
+    <p class="footer-note">内置论文信息核验自 DOI / arXiv / 官方会议页面，检索日期 2026-10-30。中文导读为研究辅助摘要，不替代原文。</p>
+    <button class="text-button footer-top" type="button" id="back-to-top">回到顶部 ↑</button>
+  </footer>
+
+  <dialog class="paper-dialog" id="paper-dialog" aria-labelledby="paper-dialog-title">
+    <form id="paper-form">
+      <div class="dialog-header">
+        <div>
+          <p class="section-index" id="paper-dialog-kicker">ADD PAPER</p>
+          <h2 id="paper-dialog-title">添加新文献</h2>
+        </div>
+        <button class="dialog-close" type="button" data-action="close-paper-dialog" aria-label="关闭">×</button>
+      </div>
+      <input type="hidden" id="paper-id">
+
+      <div class="form-grid">
+        <label class="form-field full">
+          <span>英文题名 <b>*</b></span>
+          <input id="paper-title" name="title" type="text" required placeholder="Original paper title">
+        </label>
+        <label class="form-field full">
+          <span>中文题名</span>
+          <input id="paper-title-zh" name="titleZh" type="text" placeholder="可选：便于中文检索">
+        </label>
+        <label class="form-field full">
+          <span>作者 <b>*</b></span>
+          <input id="paper-authors" name="authors" type="text" required placeholder="多位作者用分号分隔">
+        </label>
+        <label class="form-field">
+          <span>年份 <b>*</b></span>
+          <input id="paper-year" name="year" type="number" min="1950" max="2030" required placeholder="2026">
+        </label>
+        <label class="form-field">
+          <span>类型</span>
+          <select id="paper-type" name="type">
+            <option value="方法">方法</option>
+            <option value="综述">综述</option>
+            <option value="基准">基准</option>
+            <option value="数据集">数据集</option>
+          </select>
+        </label>
+        <label class="form-field full">
+          <span>期刊 / 会议</span>
+          <input id="paper-venue" name="venue" type="text" placeholder="例如：ICLR 2026 / arXiv preprint">
+        </label>
+        <label class="form-field">
+          <span>主题 <b>*</b></span>
+          <select id="paper-topic" name="topic" required></select>
+        </label>
+        <label class="form-field">
+          <span>标签</span>
+          <input id="paper-tags" name="tags" type="text" placeholder="Transformers; 多变量">
+        </label>
+        <label class="form-field full">
+          <span>关联研究空白</span>
+          <select id="paper-gap" name="gap">
+            <option value="">不关联</option>
+          </select>
+        </label>
+        <label class="form-field">
+          <span>DOI</span>
+          <input id="paper-doi" name="doi" type="text" placeholder="10.xxxx/xxxxx">
+        </label>
+        <label class="form-field">
+          <span>公开链接</span>
+          <input id="paper-url" name="url" type="url" placeholder="https://…">
+        </label>
+        <label class="form-field full">
+          <span>一句话洞见</span>
+          <textarea id="paper-summary" name="summary" rows="3" placeholder="它怎样改变你对异常检测的理解？"></textarea>
+        </label>
+        <label class="form-field full">
+          <span>研究批注</span>
+          <textarea id="paper-note" name="note" rows="4" placeholder="局限、可复现实验、与你研究方向的连接…"></textarea>
+        </label>
+      </div>
+
+      <p class="form-error" id="paper-form-error" role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button class="button button-ghost" type="button" data-action="close-paper-dialog">取消</button>
+        <button class="button button-primary" type="submit">保存文献</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden>
+    <aside class="paper-drawer" id="paper-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
+      <div class="drawer-header">
+        <span class="drawer-kicker">PAPER READER</span>
+        <button class="dialog-close" type="button" id="close-drawer" aria-label="关闭详情">×</button>
+      </div>
+      <div class="drawer-content" id="drawer-content"></div>
+    </aside>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <noscript>
+    <div class="noscript">这个研究图谱需要启用 JavaScript 才能筛选、添加和保存文献。</div>
+  </noscript>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
