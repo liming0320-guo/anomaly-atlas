@@ -2,7 +2,7 @@
 
 一个无需构建工具的静态研究网站，包含主题地图、文献时间线、可筛选卡片库和研究空白页。
 
-目标公网网址：<https://liming0320-guo.github.io/anomaly-atlas/>（仓库创建并启用 Pages 后生效）
+公网网址：<https://liming0320-guo.github.io/anomaly-atlas/>
 
 GitHub 仓库：<https://github.com/liming0320-guo/anomaly-atlas>
 
