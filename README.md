@@ -109,4 +109,4 @@ powershell -ExecutionPolicy Bypass -File .\build-ipad.ps1
 
 ## 内容核验
 
-内置文献的题名、作者、年份和 DOI/公开链接在 2026-10-30 通过 Crossref、arXiv 与官方会议页面交叉核验。中文导读为研究辅助摘要，不应替代原文。个别 2025—2026 年条目为预印本，卡片中会注明 `arXiv preprint`。
+内置文献的题名、作者、年份和 DOI/公开链接在 2026-11-10 通过 Crossref、arXiv 与官方会议页面交叉核验。中文导读为研究辅助摘要，不应替代原文。个别 2025—2026 年条目为预印本，卡片中会注明 `arXiv preprint`。

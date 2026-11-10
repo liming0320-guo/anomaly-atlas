@@ -1,4 +1,4 @@
-const SEED_VERSION = "2026.10.30";
+const SEED_VERSION = "2026.11.10";
 
 const TOPICS = {
   foundations: {
@@ -52,6 +52,23 @@ const TOPICS = {
 };
 
 const PAPER_SEED = [
+  {
+    id: "han2026expgraph",
+    title: "Explainable Anomaly Detection in Dynamic Heterogeneous Graphs via Relation Evolution",
+    titleZh: "通过关系演化实现动态异构图中的可解释异常检测",
+    authors: ["Xiaolin Han", "Xiurui Hu", "Chenhao Ma", "Xuequn Shang"],
+    year: 2026,
+    venue: "IEEE Transactions on Knowledge and Data Engineering, 38(5), 2793–2806",
+    type: "方法",
+    topic: "graph",
+    level: "前沿",
+    tags: ["动态异构图", "关系演化", "原型对齐", "可解释异常检测"],
+    summary: "ExpGraph 以目标边为中心构建异构子图，用关系级消息传递与循环建模刻画多快照结构演化，并通过元路径语义和正常原型对齐同时检测与解释异常边。",
+    lens: "它把可解释性纳入表示学习目标：异常不仅得到一个分数，还能通过与正常关系演化原型的差异说明“哪里不同”。",
+    url: "https://doi.org/10.1109/TKDE.2026.3665892",
+    doi: "10.1109/TKDE.2026.3665892",
+    gaps: ["gap-human-action", "gap-graph-few-label"]
+  },
   {
     id: "chandola2009",
     title: "Anomaly Detection: A Survey",
